@@ -1,12 +1,9 @@
-## Put comments here that give an overall description of what your
-## functions do
-
-## Write a short comment describing this function
+## makeCacheMatrix
 ## will return a list with 4 functions: get set getinverse setinverse
 ## get: returns the matrix to inverse
 ## set: sets the matrix to inverse
 ## getinverse: return the inverse matrix of matrix
-## sets the inverse matrix of matrix
+## setsinverse: sets the inverse matrix of matrix
 
 
 makeCacheMatrix <- function(x = matrix()) {
@@ -28,7 +25,11 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## cacheSolve
+## recieves the result of first function
+## returns the inverse of the matrix fed to the first function either by
+## reading it from cache
+## or calculating it
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
@@ -36,7 +37,7 @@ cacheSolve <- function(x, ...) {
         i <- x$getinverse()
         ## then check if its null. if it is not return it and exit function
         if (!is.null(i)){
-            message ("getting inverse from cache")
+            message ('getting inverse from cache')
             return (i)
         }
         ## but if it is null, call the setinverse to calculate the inverse
